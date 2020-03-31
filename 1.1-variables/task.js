@@ -9,17 +9,14 @@ function averageMark(a, g, p) {
 	
     // реализуйте здесь задание №1
     
-    let	algebra;
-    let geography;
-    let physics;
+    let	algebra = a;
+    let geography = g;
+    let physics = p;
 
-    algebra = a;
-    geography = g;
-    physics = p;
+    let result = (algebra + geography + physics) / 3;
+    
+	return result;// ваш ответ;
 
-    let result = (a + g + p) / 3;
-	return // ваш ответ;
-	console.log(result);
 }
 
 function sayHello(userName) {
@@ -27,13 +24,19 @@ function sayHello(userName) {
     // реализуйте здесь задание №2
     let myName = userName;
 
-
-	return // ваш ответ;
+    message = 'Привет, мир! Меня зовут ' + userName;
+    
+	return message; // ваш ответ;
 }
 
 function calculateFormula() {
     
 	// реализуйте здесь задание №3
+	let x = 2;
+	let y = 22;
+	let z = 0;
+
+	let result = (x * y + 5 * z + x - 1);
     
-    return // ваш ответ;
+    return result;// ваш ответ;
 }
