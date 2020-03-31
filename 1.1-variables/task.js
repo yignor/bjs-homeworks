@@ -24,7 +24,7 @@ function sayHello(userName) {
     // реализуйте здесь задание №2
     let myName = userName;
 
-    message = 'Привет, мир! Меня зовут ' + userName;
+    message = (`Привет, мир! Меня зовут ${userName}`);
     
 	return message; // ваш ответ;
 }
