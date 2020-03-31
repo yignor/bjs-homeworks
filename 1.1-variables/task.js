@@ -9,13 +9,25 @@ function averageMark(a, g, p) {
 	
     // реализуйте здесь задание №1
     
+    let	algebra;
+    let geography;
+    let physics;
+
+    algebra = a;
+    geography = g;
+    physics = p;
+
+    let result = (a + g + p) / 3;
 	return // ваш ответ;
+	console.log(result);
 }
 
 function sayHello(userName) {
 	
     // реализуйте здесь задание №2
-    
+    let myName = userName;
+
+
 	return // ваш ответ;
 }
 
