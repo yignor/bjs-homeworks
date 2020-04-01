@@ -10,7 +10,7 @@ function getResult(a,b,c){
     d = (Math.pow(b) - 4*a*c)
 
     if (d < 0) {
-        x = 'Корней нет';
+        x = [];
     } else if (d == 0) {
         x = (-b / 2*a);
     } else if (d > 0) {
