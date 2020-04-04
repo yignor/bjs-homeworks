@@ -12,7 +12,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 	};
 	percent = percent / 12 / 100;
 	creditBoddy = amount - contribution;
-	totalMonth = ((date.getFullYear() - new Date().getFullYear()) * 12) + 1 + (date.getMonth() - new Date().getMonth()); //получаем разницу в месяцах между сегодня и датой выплаты
+	totalMonth = ((date.getFullYear() - new Date().getFullYear()) * 12) + (date.getMonth() - new Date().getMonth()); //получаем разницу в месяцах между сегодня и датой выплаты
 	payment = creditBoddy * (percent + percent / (Math.pow(1+percent, totalMonth)-1));
 
 
