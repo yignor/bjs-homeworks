@@ -21,7 +21,7 @@ function getAverageMark(marks){
         console.log(`Введено более 5 оценок`);
     	marks = marks.slice(0, 5);
     };
-	for (i = 0; i < marks.length; i++) {
+    for (i = 0; i < marks.length; i++) {
     	marksSum += marks[i];
     };
     return marksSum / marks.length;
