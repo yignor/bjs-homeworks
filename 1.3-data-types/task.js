@@ -1,7 +1,7 @@
 "use strict";
 function calculateTotalMortgage(percent, contribution, amount, date) {
     let totalAmount, creditBoddy, totalMonth, payment;
-	percent = parseInt(percent);
+	percent = parseInt(percent) / 12 / 100;
 	contribution = parseInt(contribution);
 	amount = parseInt(amount);
 	if (isNaN(percent)) {
