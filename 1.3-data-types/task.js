@@ -14,9 +14,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 	creditBoddy = amount - contribution;
 	totalMonth = ((date.getFullYear() - new Date().getFullYear()) * 12) + (date.getMonth() - new Date().getMonth()); //получаем разницу в месяцах между сегодня и датой выплаты
 	payment = creditBoddy * (percent + percent / (Math.pow(1+percent, totalMonth)-1));
-
-
-	return totalAmount = (payment * totalMonth).toFixed(2);
+	return totalAmount = Number((payment * totalMonth).toFixed(2));
 }
 
 function getGreeting(name) {
@@ -24,6 +22,5 @@ function getGreeting(name) {
     if ((name == "") || (name == null) || (!name == undefined)) {
 	   	return `Привет, мир! Меня зовут Аноним`;
     };
-
     return greeting = `Привет, мир! Меня зовут ${name}`;
 }
