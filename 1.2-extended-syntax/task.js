@@ -10,10 +10,10 @@ function getResult(a,b,c){
 
     d = (Math.pow(b, 2) - 4*a*c)
     console.log(d);
-    if (d < 0) {
-        x = [];
-        console.log(x);
-    } else if (d == 0) {
+    // if (d < 0) {
+    //     x = [];
+    //     console.log(x);
+    if (d == 0) {
         x[0] = (-b / 2*a);
         console.log(x);
     } else if (d > 0) {
@@ -30,7 +30,7 @@ function getAverageMark(marks){
     marksSum = 0;
     
     if (marks.length == 0) {
-    		return averageMark = 0;
+    		return 0;
     }	else if (marks.length > 5) {
     		console.log(`Введено более 5 оценок`);
     		marks = marks.slice(0, 5);
@@ -38,17 +38,16 @@ function getAverageMark(marks){
 
 	for (i = 0; i < marks.length; i++) {
     		marksSum += marks[i];
-    		averageMark = marksSum / marks.length;
     		}
-    return averageMark;
+    return marksSum / marks.length;
 }
 
 function askDrink(name,dateOfBirthday){
     // код для задачи №3 писать здесь
-    let result, age, currentDate;
-    currentDate = new Date();
-    age = currentDate.getFullYear() - dateOfBirthday.getFullYear();
-    	if (age >= 18) {
+    let result;
+    // currentDate = new Date();
+    // age = ;
+    	if (new Date().getFullYear() - dateOfBirthday.getFullYear() >= 18) {
     		result = (`Не желаете ли олд-фэшн, ${name}?`);
     		// return result;
     	} else {
