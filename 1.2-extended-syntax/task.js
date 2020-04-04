@@ -20,10 +20,10 @@ function getAverageMark(marks){
     } else if (marks.length > 5) {
         console.log(`Введено более 5 оценок`);
     	marks = marks.slice(0, 5);
-	};
+    };
 	for (i = 0; i < marks.length; i++) {
     	marksSum += marks[i];
-    }
+    };
     return marksSum / marks.length;
 }
 
