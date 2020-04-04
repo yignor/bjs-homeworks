@@ -34,6 +34,5 @@ function askDrink(name,dateOfBirthday){
    	} else {
    		result = (`Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`);
    	};
-
     return result;
 }
