@@ -33,7 +33,6 @@ function getAverageScore(data) {
 	};
 	dataMarks.average = getAverageMark(arrayAverage(dataMarks));
 	return dataMarks;
-console.log(dataMarks)
 };
 //посчитали среднюю
 function getAverageMark(marks) {
@@ -60,8 +59,7 @@ function getPersonData(secretData) {
 	for ( let obj in secretData) {
 		deSecret[obj] = getDecodedValue(secretData[obj])
 	}
-	console.log(deSecret);
-	// return deSecret;
+	return deSecret;
 };
 
 function getDecodedValue(secret) {
