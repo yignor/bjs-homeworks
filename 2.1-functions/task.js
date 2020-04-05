@@ -25,14 +25,16 @@ function showSolutionsMessage( a, b, c ) {
 	};
 };
 //task 2
+//запустили цикл, чтобы отделить свойства со значениями и запустили внутри функцию средней, и вернули в массив
 function getAverageScore(data) {
 	let dataMarks = {};
-	for (let prop in data) {
-		dataMarks[prop] = getAverageMark(data[prop]);
-	}
-	console.log( `Свойство ${prop}, значение: ${dataMarks}` );
+	for ( let prop in data) {
+		let dataMarks = getAverageMark(data[prop]);
+	};
+	dataMarks.average = getAverageMark(arrayAverage(dataMarks));
+	return dataMarks;
 };
-
+//посчитали среднюю
 function getAverageMark(marks) {
 	let marksSum = 0;
 	for (i = 0; i < marks.length; i++) {
@@ -41,12 +43,10 @@ function getAverageMark(marks) {
     return marksSum / marks.length;
 };
 
-
-console.log(
-  getAverageScore({
-    algebra: [4, 5, 5, 4],
-    music: [5, 4],
-    english: [3, 4, 5, 4],
-    hhh: [2, 3, 5]
-  })
-);
+function arrayAverage(arr) {
+	let values = [];
+	for (let elements in arr) {
+		values.push(arr[elements]);
+	}
+	return values;
+};
