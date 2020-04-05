@@ -3,11 +3,14 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     let totalAmount, creditBoddy, totalMonth, payment;
 	if (isNaN(parseInt(percent))) {
 		return `Параметр "Процентная ставка" содержит неправильное значение ${percent}`;
-	} else if (isNaN(parseInt(contribution))) {
+	}; 
+	if (isNaN(parseInt(contribution))) {
 		return `Параметр "Начальный взонс" содержит неправильное значение ${contribution}`;
-	} else if (isNaN(parseInt(amount))) {
+	};
+	if (isNaN(parseInt(amount))) {
 		return `Параметр "Общая стоимость" содержит неправильное значение ${amount}`;
-	} else if (new Date > date) {
+	};
+	if (new Date > date) {
 		return `Параметр дата введен не верно`;
 	};
 	percent = percent / 12 / 100;
