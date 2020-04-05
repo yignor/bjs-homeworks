@@ -41,6 +41,9 @@ function getAverageMark(marks) {
 	for (i = 0; i < marks.length; i++) {
     	marksSum += marks[i];
     };
+    if (marksSum == 0 ) {
+    	return 0;
+    }
     return marksSum / marks.length;
 };
 
