@@ -29,10 +29,11 @@ function showSolutionsMessage( a, b, c ) {
 function getAverageScore(data) {
 	let dataMarks = {};
 	for ( let prop in data) {
-		let dataMarks = getAverageMark(data[prop]);
+		dataMarks[prop] = getAverageMark(data[prop]);
 	};
 	dataMarks.average = getAverageMark(arrayAverage(dataMarks));
 	return dataMarks;
+console.log(dataMarks)
 };
 //посчитали среднюю
 function getAverageMark(marks) {
@@ -47,6 +48,39 @@ function arrayAverage(arr) {
 	let values = [];
 	for (let elements in arr) {
 		values.push(arr[elements]);
-	}
+	};
 	return values;
 };
+//task 3
+function getPersonData(secretData) {
+	let deSecret = {};
+	for ( let obj in secretData) {
+		deSecret[obj] = getDecodedValue(secretData[obj])
+	}
+	console.log(deSecret);
+	// return deSecret;
+};
+
+function getDecodedValue(secret) {
+	if (secret == 1) {
+		return `Эмильо`;
+	} 
+	return `Родриго`;
+};
+
+console.log( getPersonData({
+	aaa: 0,
+	bbb: 0
+}));
+console.log( getPersonData({
+	aaa: 0,
+	bbb: 1
+}));
+console.log( getPersonData({
+	aaa: 1,
+	bbb: 0
+}));
+console.log( getPersonData({
+	aaa: 1,
+	bbb: 1
+}));
