@@ -42,7 +42,7 @@ function getAverageMark(marks) {
     };
     if (marksSum == 0 ) {
     	return 0;
-    }
+    };
     return marksSum / marks.length;
 };
 
@@ -55,18 +55,13 @@ function arrayAverage(arr) {
 };
 //task 3
 function getPersonData(secretData) {
-	let deSecret = {};
-	for ( let obj in secretData) {
-		deSecret[obj] = getDecodedValue(secretData[obj])
-	}
-	return deSecret;
+	let firstName = getDecodedValue(secretData.aaa);
+	let lastName = getDecodedValue(secretData.bbb);
+	return { firstName, lastName };
 };
 
 function getDecodedValue(secret) {
-	if (secret == 1) {
-		return `Эмильо`;
-	} 
-	return `Родриго`;
+	return secret ? "Эмильо" : "Родриго"; 
 };
 
 console.log( getPersonData({
