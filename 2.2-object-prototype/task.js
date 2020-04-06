@@ -13,12 +13,8 @@ function getAverageMark(marks) {
 
 function checkBirthday(birthday) {
 	let now = Date.now();
-	let date = +new Date(birthday);
-	birthday = Date.now(birthday);
+	birthday = +new Date(birthday);
 	let diff = now - birthday;
-	console.log(diff)
-	console.log(birthday)
-	console.log(now)
-	// diff = date.setFullYear(diff)
-    // return verdict
+	age = Math.floor(diff / 31536000000);
+    return (age > 18) ? 'Да' : 'Нет';
 }
