@@ -5,14 +5,13 @@ class Weapon {
 		this.attack = Weapon.attack;
 		this.durability = Weapon.durability;
 		this.range = Weapon.range;
-	 	this.countDurability = this.durability
 	};
 	takeDamage(damage) {
-		let countDurability = this.durability - damage;
-		if (this.countDurability < 0) {
-			return this.countDurability = 0;
+		this.durability -= damage;
+		if (this.durability < 0) {
+			return this.durability = 0;
 		}
-		return countDurability ;
+		return this.durability ;
 	};
 	getDamage() {
 		if (this.durability == 0) {
@@ -72,10 +71,10 @@ console.log(bow.durability); // 0
 console.log(bow.getDamage()); // 0
 
 console.log(arm.durability); // Infinity
-console.log(bow.getDamage()); // 1
+console.log(arm.getDamage()); // 1
 
 console.log(bow.durability); // 0
 console.log(bow.isBroken()); // true
 
 console.log(arm.durability); // Infinity
-console.log(bow.isBroken()); // false
+console.log(arm.isBroken()); // false
