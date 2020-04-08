@@ -7,11 +7,11 @@ class Weapon {
 		this.range = Weapon.range;
 	};
 	takeDamage(damage) {
-		this.durability -= damage;
+		let countDurability = this.durability - damage;
 		if (this.durability < 0) {
 			return this.durability = 0;
 		}
-		return this.durability;
+		return countDurability ;
 	};
 	getDamage() {
 		if (this.durability == 0) {
