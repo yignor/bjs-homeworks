@@ -5,11 +5,12 @@ class Weapon {
 		this.attack = Weapon.attack;
 		this.durability = Weapon.durability;
 		this.range = Weapon.range;
+	 	this.countDurability = this.durability
 	};
 	takeDamage(damage) {
 		let countDurability = this.durability - damage;
-		if (this.durability < 0) {
-			return this.durability = 0;
+		if (this.countDurability < 0) {
+			return this.countDurability = 0;
 		}
 		return countDurability ;
 	};
