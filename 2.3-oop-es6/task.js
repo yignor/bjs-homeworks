@@ -76,6 +76,7 @@ class StormStaff extends Staff {
 class StudentLog {
 	constructor(name) {
 		this.name = name;
+		this.grades = {};
 	};
 	getName() {
 		return this.name;
@@ -83,10 +84,8 @@ class StudentLog {
 	addGrade(grade, subject) {
 		this.grade = [grade];
 		this.subject = subject;
-		if (isNaN(this.grade)) {
+		if (isNaN(this.grade) || (this.grade <= 0) || (this.grade >= 6)) {
 			return (` Вы пытались поставить оценку "${this.grade}" по предмету "${this.subject}". Допускаются только числа от 1 до 5.`);
-		} else if ((this.grade <= 0) || (this.grade >= 6)) {
-			return (`Вы пытались поставить оценку "${this.grade}" по предмету "${this.subject}". Допускаются только числа от 1 до 5.`);
 		} else {
 			return this.grade.length;
 		};
@@ -96,32 +95,33 @@ class StudentLog {
 			return 0;
 		} else {
 			let marksSum = 0;
-			for (i = 0; i < this.grade.length; i++) {
+			for (let i = 0; i < this.grade.length; i++) {
     		marksSum += this.grade[i];
     	};
     	return marksSum / this.grade.length;
+		};
 	};
 };
 
-const log = new StudentLog('Олег Никифоров');
+// const log = new StudentLog('Олег Никифоров');
 
-log.addGrade(2, 'algebra');
-log.addGrade(4, 'algebra');
-log.addGrade(5, 'geometry');
-log.addGrade(4, 'geometry');
+// log.addGrade(2, 'algebra');
+// log.addGrade(4, 'algebra');
+// log.addGrade(5, 'geometry');
+// log.addGrade(4, 'geometry');
 
-console.log(log.getAverageBySubject('geometry')); // 4.5
-console.log(log.getAverageBySubject('algebra')); // 3
-console.log(log.getAverageBySubject('math')); // 0
+// console.log(log.getAverageBySubject('geometry')); // 4.5
+// console.log(log.getAverageBySubject('algebra')); // 3
+// console.log(log.getAverageBySubject('math')); // 0
 
 
 //check block
-// const longbow = new LongBow();
+const longbow = new LongBow();
 
-// console.log(bow.name); // Лук
-// console.log(bow.attack); // 10
-// console.log(bow.durability); // 200
-// console.log(bow.range); // 3
+console.log(bow.name); // Лук
+console.log(bow.attack); // 10
+console.log(bow.durability); // 200
+console.log(bow.range); // 3
 // const sword = new Weapon({
 //   name: 'Старый меч',
 //   attack: 20,
