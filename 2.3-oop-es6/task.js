@@ -32,7 +32,7 @@ class Weapon {
 	};
 };
 //task 2
-class Hand extends Weapon {
+class Arm extends Weapon {
 	constructor(name = 'Рука', attack = 1, durability = Infinity, range = 1,) {
 		super({name, attack, durability, range,});
 	};
@@ -103,16 +103,16 @@ class StudentLog {
 	};
 };
 
-// const log = new StudentLog('Олег Никифоров');
+const log = new StudentLog('Олег Никифоров');
 
-// log.addGrade(2, 'algebra');
-// log.addGrade(4, 'algebra');
-// log.addGrade(5, 'geometry');
-// log.addGrade(4, 'geometry');
+log.addGrade(2, 'algebra');
+log.addGrade(4, 'algebra');
+log.addGrade(5, 'geometry');
+log.addGrade(4, 'geometry');
 
-// console.log(log.getAverageBySubject('geometry')); // 4.5
-// console.log(log.getAverageBySubject('algebra')); // 3
-// console.log(log.getAverageBySubject('math')); // 0
+console.log(log.getAverageBySubject('geometry')); // 4.5
+console.log(log.getAverageBySubject('algebra')); // 3
+console.log(log.getAverageBySubject('math')); // 0
 
 
 //check block
