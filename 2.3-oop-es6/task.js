@@ -59,17 +59,17 @@ class Staff extends Weapon {
 };
 class LongBow extends Bow {
 	constructor(name = 'Длинный лук', attack = 15, durability, range = 4,) {
-		super({name, attack, durability, range,});
+		super(name, attack, durability, range,);
 	};
 };
 class Axe extends Sword {
 	constructor(name = 'Секира', attack = 27, durability = 800, range,) {
-		super({name, attack, durability, range,});
+		super(name, attack, durability, range,);
 	};
 };
 class StormStaff extends Staff {
 	constructor(name = 'Посох Бури', attack = 10, durability, range = 3,) {
-		super({name, attack, durability, range,});
+		super(name, attack, durability, range,);
 	};
 };
 //task 3
@@ -116,12 +116,15 @@ class StudentLog {
 
 
 //check block
-const longbow = new LongBow();
+// const bow = new Bow();
+// const sword = new Sword();
+// const axe = new Axe();
+// const longbow = new LongBow();
 
-console.log(bow.name); // Лук
-console.log(bow.attack); // 10
-console.log(bow.durability); // 200
-console.log(bow.range); // 3
+// console.log(bow.name); // Лук
+// console.log(bow.attack); // 10
+// console.log(bow.durability); // 200
+// console.log(bow.range); // 3
 // const sword = new Weapon({
 //   name: 'Старый меч',
 //   attack: 20,
