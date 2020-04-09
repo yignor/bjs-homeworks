@@ -101,6 +101,9 @@ class StudentLog {
     	return marksSum / this.grade.length;
 		};
 	};
+	getTotalAverage() {
+		
+	}
 };
 
 const log = new StudentLog('Олег Никифоров');
