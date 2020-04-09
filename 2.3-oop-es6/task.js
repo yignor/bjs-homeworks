@@ -96,10 +96,10 @@ class StudentLog {
 			return 0;
 		} else {
 			let marksSum = 0;
-			for (i = 0; i < this.subject.length; i++) {
-    		this.subject += this.subject[i];
+			for (i = 0; i < this.grade.length; i++) {
+    		marksSum += this.grade[i];
     	};
-    	return marksSum / this.subject.length;
+    	return marksSum / this.grade.length;
 	};
 };
 
