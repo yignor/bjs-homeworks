@@ -34,7 +34,9 @@ describe('Домашнее задание к занятию 2.3 «ООП в JS (
   it('Задача №1 Проверка нанесение урона оружием', () => {
     expect(weapon.getDamage()).toEqual(weapon.attack);
     weapon.durability *= 0.1;
+     debugger;
     expect(weapon.getDamage()).toEqual(weapon.attack / 2);
+    debugger;
     weapon.durability = 0;
     expect(weapon.getDamage()).toEqual(0);
   });
