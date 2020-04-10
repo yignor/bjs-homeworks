@@ -1,16 +1,16 @@
 //task 1
 function parseCount (count) {
-	if (isNaN(count)) {
+	if (isNaN(Number.parseInt(count))) {
 		throw new Error("Невалидное значение");
-	} else {
-		return Number.parseInt(count);
-	};
+	} 
+	return count;
 };
 function validateCount (count) {
 	try {
 		return parseCount(count);
-	} catch {
-		return "Невалидное значение";
+	} catch (e) {
+		return e;
 	};
+return result;
 };
 //task 2
