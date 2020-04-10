@@ -1,8 +1,7 @@
 //task 1
 function parseCount (count) {
 	if (isNaN(count)) {
-		const divideError = new Error("Невалидное значение");
-		throw divideError;
+		throw new Error("Невалидное значение");
 	} else {
 		return Number.parseInt(count);
 	};
