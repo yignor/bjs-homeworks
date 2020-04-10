@@ -1,17 +1,17 @@
 //task 1
-function parseCount (a) {
-	if (isNaN(a)) {
-		throw 'Невалидное значение';
-		return a;
+function parseCount (count) {
+	if (isNaN(count)) {
+		const divideError = new Error("Невалидное значение");
+		throw divideError;
 	} else {
-		return Number.parseInt(a);
+		return Number.parseInt(count);
 	};
 };
-function validateCount (a) {
+function validateCount (count) {
 	try {
-		parseCount(a);
+		return parseCount(count);
 	} catch {
-		return 'Ошибка, введите цифру'
-	}
+		return "Невалидное значение";
+	};
 };
 //task 2
