@@ -5,16 +5,16 @@ function getAnimalSound(animal) {
 function getAverageMark(marks) {
 	let marksSum = 0
 	for (i = 0; i < marks.length; i++) {
-    	marksSum += Number(marks[i]);
+    	marksSum += parseInt(marks[i]);
     };
     let roundedAverage = marksSum / marks.length;
     return Math.round(roundedAverage);
 };
 
 function checkBirthday(birthday) {
-	let now = Date.now();
+	const now = Date.now();
 	birthday = +new Date(birthday);
-	let diff = now - birthday;
+	const diff = now - birthday;
 	age = Math.floor(diff / 31536000000);
-    return (age > 18) ? 'Да' : 'Нет';
+    return (age >= 18) ? true : false;
 }
