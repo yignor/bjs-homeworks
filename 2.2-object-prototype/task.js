@@ -1,6 +1,4 @@
-function getAnimalSound(animal) {
-	return (animal === undefined) ? null : animal.sound;
-};
+//String.prototype.isPalindrome - для задачи №1
 
 function getAverageMark(marks) {
 	let marksSum = 0
