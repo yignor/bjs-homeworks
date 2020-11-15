@@ -1,5 +1,10 @@
 //String.prototype.isPalindrome - для задачи №1
 
+// String.prototype.isPalindrome (data) {
+// 	this.data
+// };
+
+// Task 2
 function getAverageMark(marks) {
 	let marksSum = 0
 	for (i = 0; i < marks.length; i++) {
@@ -15,4 +20,4 @@ function checkBirthday(birthday) {
 	const diff = now - birthday;
 	age = Math.floor(diff / 31536000000);
     return (age >= 18) ? true : false;
-}
+};
