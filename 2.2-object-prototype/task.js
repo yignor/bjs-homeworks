@@ -11,7 +11,7 @@ function getAverageMark(marks) {
     	marksSum += parseInt(marks[i]);
     };
     let roundedAverage = marksSum / marks.length;
-    return Math.round(roundedAverage);
+    return !isNaN ? 0 : Math.round(roundedAverage);
 };
 
 function checkBirthday(birthday) {
