@@ -1,8 +1,11 @@
 //String.prototype.isPalindrome - для задачи №1
 
-// String.prototype.isPalindrome (data) {
-// 	this.data
-// };
+String.prototype.isPalindrome = function() {
+	let str = this.toLowerCase();
+	for (i = 0; i < str.length; i++) {
+		return (str[i] === str[str.length - 1 - i]) ? true : false;
+	};
+};
 
 // Task 2
 function getAverageMark(marks) {
@@ -11,9 +14,10 @@ function getAverageMark(marks) {
     	marksSum += parseInt(marks[i]);
     };
     let roundedAverage = marksSum / marks.length;
-    return !isNaN ? 0 : Math.round(roundedAverage);
+    return !isNaN(marks) ? 0 : Math.round(roundedAverage);
 };
 
+// Task 3
 function checkBirthday(birthday) {
 	const now = Date.now();
 	birthday = +new Date(birthday);
