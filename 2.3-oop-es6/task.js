@@ -7,15 +7,18 @@ class PrintEditionItem {
 		this.state = 100;
 		this.type = null;
 	};
-	fix() {
-		this.state = (this.state > 0 && this.state < 100) ? this.state * 1.5 : this.countState;
-	};
+	
 	set countState(state) {
-		this.state = (state < 0) ? 0 : (state > 100) ? 100 : state;
+		state = (state < 0) ? 0 : (state > 100) ? 100 : state;
+		this.state = state;
 	};
-
+	
 	get countState() {
 		return this.state;
+	};
+	
+	fix() {
+		this.state = (this.state > 0 && this.state < 100) ? this.state * 1.5 : this.state;
 	};
 };
 
@@ -30,9 +33,48 @@ class Magazine extends PrintEditionItem {
 	constructor (name, releaseDate, pagesCount) {
 		super(name, releaseDate, pagesCount);
 		this.type = 'magazine';
-	}
+	};
 };
 
+class Book extends PrintEditionItem {
+	constructor (author, name, releaseDate, pagesCount) {
+		super(name, releaseDate, pagesCount);
+		this.author = author;
+		this.type = 'book';
+	};
+};
+
+class NovelBook extends Book {
+	constructor (author, name, releaseDate, pagesCount) {
+		super(author, name, releaseDate, pagesCount);
+		this.type = 'novel';
+	};
+};
+
+class FantasticBook extends Book {
+	constructor (author, name, releaseDate, pagesCount) {
+		super(author, name, releaseDate, pagesCount);
+		this.type = 'fantastic';
+	};
+};
+
+class DetectiveBook extends Book {
+	constructor (author, name, releaseDate, pagesCount) {
+		super(author, name, releaseDate, pagesCount);
+		this.type = 'detective';
+	};
+};
+
+//task 2
+class Library {
+	constructor(name) {
+		this.name = name.toString();
+		this.books = [];
+	};
+	addBook(book) {
+		book = state > 30 ? this.books: '';
+	};
+}
 
 // class Weapon {
 // 	constructor({name, attack, durability, range,}) {
