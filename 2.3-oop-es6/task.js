@@ -8,13 +8,13 @@ class PrintEditionItem {
 		this.type = null;
 	};
 	
-	set countState(state) {
+	set state(state) {
 		state = (state < 0) ? 0 : (state > 100) ? 100 : state;
-		this.state = state;
+		this._state = state;
 	};
 	
-	get countState() {
-		return this.state;
+	get state() {
+		return this._state;
 	};
 	
 	fix() {
@@ -22,12 +22,12 @@ class PrintEditionItem {
 	};
 };
 
-const sherlock = new PrintEditionItem("Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008);
+// const sherlock = new PrintEditionItem("Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008);
 
-console.log(sherlock.releaseDate); //2019
-console.log(sherlock.state); //100
-sherlock.fix();
-console.log(sherlock.state); //100
+// console.log(sherlock.releaseDate); //2019
+// console.log(sherlock.state); //100
+// sherlock.fix();
+// console.log(sherlock.state); //100
 
 class Magazine extends PrintEditionItem {
 	constructor (name, releaseDate, pagesCount) {
@@ -72,9 +72,79 @@ class Library {
 		this.books = [];
 	};
 	addBook(book) {
-		book = state > 30 ? this.books: '';
+		if (book._state > 30) {
+			return this.books.push(book);
+		} else {
+			return console.log('errore')
+		};
 	};
-}
+	findBookBy(type, value) {
+		if (this.type) {
+
+		} else {
+			return null;
+		};
+	};
+	giveBookByName(bookName) {
+
+	};
+};
+
+const library = new Library("Библиотека имени Ленина");
+
+library.addBook(new DetectiveBook("Артур Конан Дойл", "Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008));
+library.addBook(new FantasticBook("Аркадий и Борис Стругацкие", "Пикник на обочине", 1972, 168));
+library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
+library.addBook(new Magazine("Мурзилка", 1924, 60));
+
+console.log(library.findBookBy("name", "Властелин колец")); //null
+console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
+
+console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
+library.giveBookByName("Машина времени");
+console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
+
+//task 3
+class StudentLog {
+	constructor(name) {
+		this.name = name;
+		this.grades = {};
+	};
+	getName() {
+		return this.name;
+	};
+	addGrade(grade, subject) {
+		this.grade = [grade];
+		this.subject = subject;
+		if (isNaN(this.grade) || (this.grade <= 0) || (this.grade >= 6)) {
+			return (` Вы пытались поставить оценку "${this.grade}" по предмету "${this.subject}". Допускаются только числа от 1 до 5.`);
+		} else {
+			return this.grade.length;
+		};
+	};
+	getAverageBySubject(subject) {
+		if (this.subject === subject) {
+			return 0;
+		} else {
+			let marksSum = 0;
+			for (let i = 0; i < this.grade.length; i++) {
+    		marksSum += this.grade[i];
+    	};
+    	return marksSum / this.grade.length;
+		};
+	};
+	getTotalAverage() {
+		if (Number.isInteger(this.grade)) {
+			let marksSumTotal = 0;
+			for (let i = 0; i < this.grade.length; i++) {
+    		marksSumTotal += this.grade[i];
+		}
+		return this.grade = marksSumTotal / this.grade.length;
+		} else {
+			return this.grade = 0;
+		};
+	};
+};
 
 // class Weapon {
 // 	constructor({name, attack, durability, range,}) {
@@ -150,38 +220,7 @@ class Library {
 // 	};
 // };
 // //task 3
-class StudentLog {
-	constructor(name) {
-		this.name = name;
-		this.grades = {};
-	};
-	getName() {
-		return this.name;
-	};
-	addGrade(grade, subject) {
-		this.grade = [grade];
-		this.subject = subject;
-		if (isNaN(this.grade) || (this.grade <= 0) || (this.grade >= 6)) {
-			return (` Вы пытались поставить оценку "${this.grade}" по предмету "${this.subject}". Допускаются только числа от 1 до 5.`);
-		} else {
-			return this.grade.length;
-		};
-	};
-	getAverageBySubject(subject) {
-		if (this.subject === subject) {
-			return 0;
-		} else {
-			let marksSum = 0;
-			for (let i = 0; i < this.grade.length; i++) {
-    		marksSum += this.grade[i];
-    	};
-    	return marksSum / this.grade.length;
-		};
-	};
-	getTotalAverage() {
-		
-	}
-};
+
 
 // const log = new StudentLog('Олег Никифоров');
 
