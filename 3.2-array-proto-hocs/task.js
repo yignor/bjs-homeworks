@@ -14,7 +14,8 @@ function sum(...args) {
 
 
 function compareArrays( arr1, arr2 ) {
- if ((arr1.length == arr2.length) && (arr1.every()))
+ if ((arr1.length == arr2.length) && (arr1.every())) {
+ };
 };
 
 // function compareArrays (arr1, arr2) {

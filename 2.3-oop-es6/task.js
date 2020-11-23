@@ -79,15 +79,9 @@ class Library {
 		};
 	};
 	findBookBy(type, value) {
-		
-		// for (let  in this.book) {
-		// 	if this
-		// }
-		// if (this.type) {
-
-		// } else {
-		// 	return null;
-		// };
+		for (let keys in this.books[type]) {
+			console.log(this.keys)
+		};
 	};
 	giveBookByName(bookName) {
 
