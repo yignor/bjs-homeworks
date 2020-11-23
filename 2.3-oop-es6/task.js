@@ -82,12 +82,11 @@ class Library {
 		for (let i = 0; i < this.books.length; i++) {
 			let newValue = this.books[i][type]; 
 			if (newValue === value) {
-				newValue;
-			} else {
-				newValue = null;
-			}
-			return (newValue !== null) ? newValue : null
+				return newValue = this.books[i][name];
+			};
 		};
+		return null	
+		// return (newValue !== null) ? newValue : null
 		// return newValue;
 		// for (let keys in this.books[type]) {
 		// 	console.log(keys)
