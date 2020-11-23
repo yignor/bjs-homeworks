@@ -79,16 +79,33 @@ class Library {
 		};
 	};
 	findBookBy(type, value) {
-		if (this.type) {
+		
+		// for (let  in this.book) {
+		// 	if this
+		// }
+		// if (this.type) {
 
-		} else {
-			return null;
-		};
+		// } else {
+		// 	return null;
+		// };
 	};
 	giveBookByName(bookName) {
 
 	};
 };
+
+var menu = {
+	width: 300,
+	height: 200,
+	title: "Menu"
+  };
+  
+  for (var key in menu) {
+	// этот код будет вызван для каждого свойства объекта
+	// ..и выведет имя свойства и его значение
+  
+	console.log( "Ключ: " + key + " значение: " + menu[key] );
+  }
 
 const library = new Library("Библиотека имени Ленина");
 

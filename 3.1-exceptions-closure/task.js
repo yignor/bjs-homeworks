@@ -40,7 +40,7 @@ function getTriangle(a, b, c,) {
 		return triangle;
 	} catch (e) {
 		let object = {};
-		object.getPerimeter = object.getArea = () => "Ошибка! Неправильный треугольник";
+		object.getPerimeter = object.getArea = () => "Ошибка! Треугольник не существует";
 		return object;
 	}
 };
