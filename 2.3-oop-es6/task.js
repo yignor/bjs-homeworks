@@ -80,7 +80,7 @@ class Library {
 	};
 	findBookBy(type, value) {
 		for (let keys in this.books[type]) {
-			console.log(this.keys)
+			console.log(keys)
 		};
 	};
 	giveBookByName(bookName) {
