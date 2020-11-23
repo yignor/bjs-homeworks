@@ -79,27 +79,24 @@ class Library {
 		};
 	};
 	findBookBy(type, value) {
-		for (let keys in this.books[type]) {
-			console.log(keys)
+		for (let i = 0; i < this.books.length; i++) {
+			let newValue = this.books[i][type]; 
+			if (newValue === value) {
+				newValue;
+			} else {
+				newValue = null;
+			}
+			return (newValue !== null) ? newValue : null
 		};
+		// return newValue;
+		// for (let keys in this.books[type]) {
+		// 	console.log(keys)
+		// };
 	};
 	giveBookByName(bookName) {
 
 	};
 };
-
-var menu = {
-	width: 300,
-	height: 200,
-	title: "Menu"
-  };
-  
-  for (var key in menu) {
-	// этот код будет вызван для каждого свойства объекта
-	// ..и выведет имя свойства и его значение
-  
-	console.log( "Ключ: " + key + " значение: " + menu[key] );
-  }
 
 const library = new Library("Библиотека имени Ленина");
 
