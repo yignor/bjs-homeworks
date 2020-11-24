@@ -75,25 +75,22 @@ class Library {
 		if (book._state > 30) {
 			return this.books.push(book);
 		} else {
-			return console.log('errore')
+			return console.log('Errore, low state!')
 		};
 	};
 	findBookBy(type, value) {
 		for (let i = 0; i < this.books.length; i++) {
-			let newValue = this.books[i][type]; 
+			let newValue = this.books[i][type];
 			if (newValue === value) {
-				return newValue = this.books[i][name];
+				return this.books[i];
 			};
 		};
-		return null	
-		// return (newValue !== null) ? newValue : null
-		// return newValue;
-		// for (let keys in this.books[type]) {
-		// 	console.log(keys)
-		// };
+		return null;
 	};
 	giveBookByName(bookName) {
-
+		let takeBook = this.books.find(item => item.name === bookName)
+		this.books.splice(this.books.indexOf(takeBook), 1);
+		return takeBook == undefined ? null: takeBook;
 	};
 };
 
@@ -110,6 +107,31 @@ console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
 library.giveBookByName("Машина времени");
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
+
+const bigData = new Library('Big data library');
+
+bigData.addBook(new DetectiveBook("Red Author", "Red title", 2000, 1000));
+bigData.addBook(new FantasticBook("Blue Author", "Blue title", 1919, 168));
+bigData.addBook(new NovelBook("Green Author", "Green Title", 1895, 138));
+bigData.addBook(new Magazine("Yellow title", 1924, 60));
+
+console.log(bigData.findBookBy("releaseDate", 1919).name);
+const brokeBook = new Magazine("black title", 1924, 60);
+console.log("Количество книг после выдачи: " + bigData.books.length);
+bigData.giveBookByName('black title');
+console.log("Количество книг после выдачи: " + bigData.books.length);
+brokeBook.state = 10;
+console.log(brokeBook);
+brokeBook.fix();
+console.log(brokeBook)
+bigData.addBook(brokeBook)
+console.log("Количество книг после выдачи: " + bigData.books.length);
+brokeBook.state = 25;
+console.log(brokeBook);
+brokeBook.fix();
+console.log(brokeBook)
+bigData.addBook(brokeBook)
+console.log("Количество книг после выдачи: " + bigData.books.length);
 
 //task 3
 class StudentLog {
