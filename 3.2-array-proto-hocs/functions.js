@@ -8,17 +8,24 @@ function getNames(arr) {
 };
 
 function getCountReliableWeapons(value) {
-    return weapons.filter(weapons.length(weapons.filter => weapons.durability > value))
+    return weapons.filter(weapons => weapons.durability > value).length;
 };
 
-function hasReliableWeapons() {
-
+function hasReliableWeapons(value) {
+    return weapons.some(weapons => weapons.durability > value)
 };
 
-function getReliableWeaponsNames() {
-    
+function getReliableWeaponsNames(value) {
+    return weapons
+        .map(function (weapons) {
+            if (weapons.durability > value) {
+                return weapons.name;
+            }            
+            })
+            .filter(item => item !== undefined);      
 };
 
 function getTotalDamage() {
-
+    return weapons.reduce((acc, arr) => {return acc + arr.attack}, 0)
 };
+console.log(getTotalDamage())

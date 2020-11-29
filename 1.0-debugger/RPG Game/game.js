@@ -381,45 +381,45 @@ class Demourge extends Mage {
 
 // Процесс игры
 
-function play(takenPlayers) {
-	const players = [...takenPlayers];
-	do {
-		for(let i = 0; i < players.length; i++){
-			if(players[i].isDead()) {
-				console.log(`Игрок ${players[i].name} проиграл.`);
-				players.splice(i, 1);
-				continue;
-			}
+// function play(takenPlayers) {
+// 	const players = [...takenPlayers];
+// 	do {
+// 		for(let i = 0; i < players.length; i++){
+// 			if(players[i].isDead()) {
+// 				console.log(`Игрок ${players[i].name} проиграл.`);
+// 				players.splice(i, 1);
+// 				continue;
+// 			}
 
-			players[i].turn(players);
-		}
+// 			players[i].turn(players);
+// 		}
 
-	} while(players.length > 1);
-	console.log(`Победитель поединка: ${players[0].name}.`);
-}
+// 	} while(players.length > 1);
+// 	console.log(`Победитель поединка: ${players[0].name}.`);
+// }
 
-getPosition = () => Math.round(Math.random()*10);
+// getPosition = () => Math.round(Math.random()*10);
 
-play([
-	new Warrior(getPosition(), 'Рыцарь Олег'),
-	new Warrior(getPosition(), 'Рыцарь Егор'),
-	new Warrior(getPosition(), 'Рыцарь Денис'),
-	new Mage(getPosition(), 'Маг Екатерина'),
-	new Mage(getPosition(), 'Маг Даша'),
-	new Mage(getPosition(), 'Маг Марина'),
-	new Archer(getPosition(), 'Лучник Иван'),
-	new Archer(getPosition(), 'Лучник Максим'),
-	new Archer(getPosition(), 'Лучница Анна'),
-	new Dwart(getPosition(), 'Гном Александр'),
-	new Dwart(getPosition(), 'Гном Кристина'),
-	new Dwart(getPosition(), 'Гном Артём'),
-	new Crossbowman(getPosition(), 'Арболетчик Костя'),
-	new Crossbowman(getPosition(), 'Арболетчик Михаил'),
-	new Crossbowman(getPosition(), 'Арболетчик Руслан'),
-	new Demourge(getPosition(), 'Демиург Алексей'),
-	new Demourge(getPosition(), 'Демиург Татьяна'),
-	new Demourge(getPosition(), 'Демиург Маргарита'),
-]);
+// play([
+// 	new Warrior(getPosition(), 'Рыцарь Олег'),
+// 	new Warrior(getPosition(), 'Рыцарь Егор'),
+// 	new Warrior(getPosition(), 'Рыцарь Денис'),
+// 	new Mage(getPosition(), 'Маг Екатерина'),
+// 	new Mage(getPosition(), 'Маг Даша'),
+// 	new Mage(getPosition(), 'Маг Марина'),
+// 	new Archer(getPosition(), 'Лучник Иван'),
+// 	new Archer(getPosition(), 'Лучник Максим'),
+// 	new Archer(getPosition(), 'Лучница Анна'),
+// 	new Dwart(getPosition(), 'Гном Александр'),
+// 	new Dwart(getPosition(), 'Гном Кристина'),
+// 	new Dwart(getPosition(), 'Гном Артём'),
+// 	new Crossbowman(getPosition(), 'Арболетчик Костя'),
+// 	new Crossbowman(getPosition(), 'Арболетчик Михаил'),
+// 	new Crossbowman(getPosition(), 'Арболетчик Руслан'),
+// 	new Demourge(getPosition(), 'Демиург Алексей'),
+// 	new Demourge(getPosition(), 'Демиург Татьяна'),
+// 	new Demourge(getPosition(), 'Демиург Маргарита'),
+// ]);
 
 /*play([
 	new Warrior(getPosition(), 'Рыцарь Олег'),
