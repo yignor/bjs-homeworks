@@ -177,7 +177,7 @@ resultFunction(1,2,3,4); // <= должно вывести: 1,2,3,4
 ```
 
 ### 2.3 Вычисление функции
-Переделайте `memorize`, чтобы она принимала функцию, возвращённой функции выполнять эту полученную функцию
+Переделайте `memorize`, чтобы она принимала функцию, а возвращала функцию, которая будет выполнять эту полученную функцию
 ```javascript
 const resultFunction = memorize(a => a ** 2);
 resultFunction(2); // <= должно вывести: 4
@@ -243,7 +243,7 @@ resultFunction(5,6); // <= ничего не найдёт в памяти.
 [2]: https://code.visualstudio.com/
 [3]: https://github.com/netology-code/guides/blob/master/git/github.md
 [4]: https://git-scm.com/
-[5]: https://github.com/netology-code/guides/blob/master/git/REAMDE.md
+[5]: https://github.com/netology-code/guides/blob/master/git/README.md
 [6]: https://netology.ru/
 
 *Никаких файлов прикреплять не нужно.*
